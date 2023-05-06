@@ -14,14 +14,15 @@
 
 <body>
     <header class="header">
-        <h1 >
-            <img src="../dist/img/logo.svg" alt="Logo da Disney+" class="header__logo">
-        </h1>
-        <nav>
-            <button type="button" class="header__button">Assinar o Disney+</button>
-            <button type="button" class="header__button">Entrar</button>
-
-        </nav>
+        <div class="header__container">
+            <h1 class="header__title">
+                <img src="../dist/img/logo.svg" alt="Logo da Disney+" class="header__title__logo header__title__logo--is-hidden">
+            </h1>
+            <nav>
+                <button type="button" class="button button--is-hidden">Assinar o Disney+</button>
+                <button type="button" class="button button--secondary button--contoured">Entrar</button>
+            </nav>
+        </div>
     </header>
     <section class="background">
         <img src="../dist/img/vingadores.jpeg" alt="Imagem de divulgação do filme vingadores" class="background__img">

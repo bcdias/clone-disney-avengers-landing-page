@@ -1,8 +1,32 @@
-.header {
-    display: flex;
-    justify-content: space-between;
+@use 'variables';
 
-    &__logo {
-        height: 48px;
+.header {
+    height: 72px;
+    
+    &--is-visible{
+        background-color: variables.$bgColor;
+    }
+    
+    &__container{
+        height: 100%;
+        margin: 0 36px;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+    }
+
+    &__title{
+
+        &--is-hidden{
+            visibility: hidden;
+        }
+
+        &__logo {
+            height: 48px;
+
+            &--is-hidden{
+                visibility: hidden;
+            }
+        }
     }
 }

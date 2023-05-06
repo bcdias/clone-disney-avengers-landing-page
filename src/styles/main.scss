@@ -1,4 +1,71 @@
-@use 'reset';
+@use 'variables';
+@use 'fonts';
 @use 'header';
 @use 'background';
 
+//Mixins
+@mixin textConfig($size: 20px, $weight: 400) {
+    font-size: $size;
+    font-weight: $weight;
+}
+
+
+
+//styles
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Avenir, sans-serif;
+    @include textConfig;
+    color: variables.$colorPrimary;
+    list-style: none;
+}
+
+.title {
+    @include textConfig(24px, 700);
+}
+
+.text {
+    @include textConfig;
+}
+
+.text--small {
+    @include textConfig(12px);
+}
+
+.button {
+    background: variables.$btPrimary;
+    padding: 0 16px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: .25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:first-child {
+        margin-right: 16px;
+    }
+
+    &:hover {
+        background-color: variables.$btPrimaryHover;
+    }
+
+    &--is-hidden{
+        visibility: hidden;
+    }
+
+    &--secondary {
+        background: variables.$btSecondary;
+        border: 1px solid variables.$colorPrimary;
+
+        &:hover {
+            background: variables.$colorPrimary;
+            color: variables.$btSecondaryTextHover;
+        }
+    }
+
+}
