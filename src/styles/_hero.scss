@@ -1,0 +1,39 @@
+.hero {
+    margin: 0 calc(3.5vw + 24px) 67px;
+
+    &__movie {
+        margin: 56px 0 16px 0;
+
+        &__logo {
+            max-width: 341px;
+            min-width: 100px;
+            width: 35vw;
+        }
+
+    }
+
+    &__information {
+        display:  flex;
+        align-items: center;
+
+        &__img {
+            height: 20px;
+            margin-right: 4px;
+        }
+    }
+
+    &__genres{
+        margin-top: 5px;
+    }
+
+    &__nav{
+        margin: 43px 0 11px;
+    }
+
+    &__synopsis{
+        margin: 16px 0;
+        max-width: 875px;
+        line-height: 1.6;
+        letter-spacing: -.1px;
+    }
+}

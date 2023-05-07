@@ -2,13 +2,14 @@
 @use 'fonts';
 @use 'header';
 @use 'background';
+@use 'hero';
+@use 'about';
 
 //Mixins
 @mixin textConfig($size: 20px, $weight: 400) {
     font-size: $size;
     font-weight: $weight;
 }
-
 
 
 //styles
@@ -23,11 +24,16 @@
 
 .title {
     @include textConfig(24px, 700);
+
+    &--section-about {
+        color: variables.$colorSecondary;
+        padding-bottom: 15px;
+        border-bottom: 1.6px solid variables.$colorSecondary;
+        margin-bottom: 10px
+
+    }
 }
 
-.text {
-    @include textConfig;
-}
 
 .text--small {
     @include textConfig(12px);
@@ -54,7 +60,7 @@
         background-color: variables.$btPrimaryHover;
     }
 
-    &--is-hidden{
+    &--is-hidden {
         visibility: hidden;
     }
 
@@ -66,6 +72,11 @@
             background: variables.$colorPrimary;
             color: variables.$btSecondaryTextHover;
         }
+    }
+
+    &--hero {
+        height: 56px;
+        padding: 0 24px;
     }
 
 }
