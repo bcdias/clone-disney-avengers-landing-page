@@ -1,7 +1,33 @@
 .about {
     margin: 0 calc(3.5vw + 24px);
+}
 
-    &__avengers {
+.movie {
+    margin-top: 10px;
+
+    &__title {
         margin-bottom: 24px;
+
+    }
+
+    &__info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+
+        .content {
+            letter-spacing: -.1px;
+            line-height: 1.6;
+
+
+            &__synopsis {
+                padding-bottom: 36px;
+            }
+        }
+
+        .data {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
     }
 }
