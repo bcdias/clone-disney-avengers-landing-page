@@ -4,6 +4,7 @@
 @use 'background';
 @use 'hero';
 @use 'about';
+@use 'footer';
 
 //Mixins
 @mixin textConfig($size: 20px, $weight: 400) {
@@ -20,6 +21,12 @@
     // @include textConfig;
     color: variables.$colorPrimary;
     list-style: none;
+    text-decoration: none
+}
+
+.main{
+    background-color: variables.$bgMain;
+    padding-bottom:  150px;
 }
 
 .title {
@@ -49,6 +56,14 @@
 
 .text--small {
     @include textConfig(12px);
+}
+
+.logo {
+    height: 48px;
+
+    &--is-hidden{
+        visibility: hidden;
+    }
 }
 
 .button {
@@ -102,4 +117,9 @@
     margin-bottom: 8px;
     letter-spacing: -.1px;
     line-height: 1.6;
+}
+
+.main{
+    background-color: variables.$bgMain;
+    padding-bottom:  150px;
 }

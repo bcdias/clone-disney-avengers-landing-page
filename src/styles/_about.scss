@@ -1,5 +1,7 @@
 .about {
     margin: 0 calc(3.5vw + 24px);
+    z-index: 1;
+    position: relative;
 }
 
 .movie {

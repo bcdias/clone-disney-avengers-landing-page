@@ -1,0 +1,41 @@
+@use 'variables';
+
+.footer {
+    padding-top: 20px;
+    background-color: variables.$bgColor;
+    position: relative;
+    z-index: 1;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    &__nav {
+
+        &__list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            &__item {
+                margin: 11px 5px 10px;
+            }
+        }
+    }
+
+    &__content {
+        text-align: center;
+        color: variables.$colorSecondary;
+        letter-spacing: -.1px;
+        line-height: 1.5;
+        margin: 0 28px;
+
+        &--copy{
+            margin: 8px 0 24px;
+        }
+    }
+}

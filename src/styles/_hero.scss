@@ -1,5 +1,7 @@
 .hero {
     margin: 0 calc(3.5vw + 24px) 67px;
+    z-index: 1;
+    position: relative;
 
     &__movie {
         margin: 56px 0 16px 0;

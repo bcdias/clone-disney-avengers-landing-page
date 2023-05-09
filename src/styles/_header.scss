@@ -6,6 +6,10 @@
     left: 0;
     height: 72px;
     z-index: 1;
+
+    @media (max-width: 768px) {
+        height: 52px;
+    }
     
     &--is-visible{
         background-color: variables.$bgColor;
@@ -25,12 +29,5 @@
             visibility: hidden;
         }
 
-        &__logo {
-            height: 48px;
-
-            &--is-hidden{
-                visibility: hidden;
-            }
-        }
     }
 }
