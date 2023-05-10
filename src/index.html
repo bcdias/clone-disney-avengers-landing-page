@@ -15,12 +15,12 @@
 <body>
     <header class="header">
         <div class="header__container">
-            <h1 class="header__title">
-                <img src="../dist/img/logo.svg" alt="Logo da Disney+" class="logo logo--is-hidden">
+            <h1>
+                <img src="../dist/img/logo.svg" alt="Logo da Disney+" class="logo logo--is-hidden logo--mobile">
             </h1>
-            <nav>
-                <button type="button" class="text--big button button--is-hidden">Assinar o Disney+</button>
-                <button type="button" class="text--big button button--secondary">Entrar</button>
+            <nav class="header__nav">
+                <button type="button" class="button button--is-hidden">Assinar o Disney+</button>
+                <button type="button" class="button button--secondary">Entrar</button>
             </nav>
         </div>
     </header>
@@ -43,8 +43,8 @@
                 <p class="text--small">Ficção científica, Fantasia, Super-Heróis, Ação e aventura</p>
             </div>
             <nav class="hero__nav">
-                <button type="button" class="text--big button button--hero">Assinar o Disney+</button>
-                <button type="button" class="text--big button button--secondary button--hero">Trailer</button>
+                <button type="button" class="button button--hero">Assinar o Disney+</button>
+                <button type="button" class="button button--secondary button--hero button--hero-hidden">Trailer</button>
             </nav>
             <p class=" text--big hero__synopsis">
                 Quando um inimigo inesperado ameaça a segurança global, Nick Fury, diretor da agência internacional
@@ -89,7 +89,7 @@
                             </li>
                         </ul>
                         <ul>
-                            <li class="list-item">
+                            <li class="list-item list-item--direction">
                                 <h3 class="title__small">Direção:</h3>
                                 <p class="text">Joss Whedon</p>
                             </li>
@@ -120,8 +120,7 @@
                     </div>
                 </div>
             </article>
-        </section>
-        
+        </section>    
     </main>
     <footer class="footer">
         <div class="footer__container">
@@ -144,7 +143,7 @@
                 comercializado por The Walt Disney Company (Brasil) Ltda., World Trade Center, Av. Das Nações Unidas,
                 12.551, 12.555, 12.559, Piso 10, São Paulo/SP - CEP 04578-903, Brasil e CNPJ/M 73.042.962/0004-20
             </p>
-            <p class="text--small footer__content footer__content--copy">&copy;Disney. Todos os direitos reservados</p> 
+            <p class="text--small footer__content footer__content--copy">&copy; Disney. Todos os direitos reservados</p> 
         </div>
     </footer>
 </body>

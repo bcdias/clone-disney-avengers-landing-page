@@ -18,15 +18,19 @@
     margin: 0;
     padding: 0;
     font-family: Avenir, sans-serif;
-    // @include textConfig;
     color: variables.$colorPrimary;
     list-style: none;
-    text-decoration: none
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
-.main{
+.main {
     background-color: variables.$bgMain;
-    padding-bottom:  150px;
+    padding-bottom: 150px;
+    
+    @media (max-width: 767px){
+        padding-bottom: 125px;
+    }
 }
 
 .title {
@@ -41,16 +45,20 @@
     }
 }
 
-.title__small{
+.title__small {
     @include textConfig(15px);
     color: variables.$colorSecondary
 }
 
-.text--big{
+.text--big {
     @include textConfig;
+
+    @media (max-width: 767px) {
+        // @include textConfig(15px);
+    }
 }
 
-.text{
+.text {
     @include textConfig(15px);
 }
 
@@ -61,8 +69,18 @@
 .logo {
     height: 48px;
 
-    &--is-hidden{
+    @media (max-width: 767px){
+        height: 38px;
+    }
+    &--is-hidden {
         visibility: hidden;
+    }
+
+    &--mobile {
+        @media (max-width:767px) {
+            visibility: visible;
+            height: 38px;
+        }
     }
 }
 
@@ -70,7 +88,7 @@
     background: variables.$btPrimary;
     padding: 0 16px;
     height: 40px;
-    font-size: 15px;
+    @include textConfig(15px);
     font-weight: bold;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -79,8 +97,16 @@
     cursor: pointer;
     transition: all 0.2s ease;
 
+    @media (max-width: 767px) {
+        padding: 0 8px;
+    }
+
     &:first-child {
         margin-right: 16px;
+
+        @media (max-width: 767px) {
+            margin-right: 0;
+        }
     }
 
     &:hover {
@@ -104,6 +130,16 @@
     &--hero {
         height: 56px;
         padding: 0 24px;
+
+        @media (max-width: 767px) {
+            height: 40px;
+        }
+    }
+
+    &--hero-hidden {
+        @media (max-width: 767px) {
+            display: none;
+        }
     }
 
 }
@@ -111,15 +147,4 @@
 .small__img {
     height: 20px;
     margin-right: 4px;
-}
-
-.list-item {
-    margin-bottom: 8px;
-    letter-spacing: -.1px;
-    line-height: 1.6;
-}
-
-.main{
-    background-color: variables.$bgMain;
-    padding-bottom:  150px;
 }

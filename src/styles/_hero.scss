@@ -6,6 +6,12 @@
     &__movie {
         margin: 56px 0 16px 0;
 
+        @media (max-width: 767px){
+            height: 98px;
+            display: flex;
+            align-items:end;
+        }
+
         &__logo {
             max-width: 341px;
             min-width: 100px;
