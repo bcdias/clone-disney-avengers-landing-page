@@ -2,10 +2,14 @@ const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const imagemin = require('gulp-imagemin');
 const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
+const replace = require('gulp-replace');
+const htmlmin = require('gulp-htmlmin');
+const clean = require('gulp-clean');
 
 
 
-function compilaSass(){
+function compilaSass() {
     return gulp.src('./src/styles/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
@@ -15,16 +19,39 @@ function compilaSass(){
         .pipe(gulp.dest('./dist/styles'));
 }
 
-function imageCompress(){
+function imageCompress() {
     return gulp.src('./src/img/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('./dist/img'))
 }
 
+function jsCompress() {
+    return gulp.src('./src/js/*')
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/js'))
+}
+
+function replaceTemplate() {
+    return gulp.src(['./src/index.html'])
+        .pipe(replace('<link rel="stylesheet" href="../dist/styles/main.css">', '<link rel="stylesheet" href="./styles/main.css">'))
+        .pipe(replace('baz', 'fuz'))
+        .pipe(gulp.dest('./prebuild'));
+}
+
+function htmlMinify(){
+    return gulp.src('prebuild/index.html')
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest('./dist'));
+}
+
+function clear(){
+    return gulp.src('./prebuild', {read: false})
+        .pipe(clean());
+}
 
 
-exports.default = gulp.parallel(compilaSass, imageCompress)
+exports.default =  gulp.series(replaceTemplate, htmlMinify, clear, gulp.parallel(compilaSass, imageCompress, jsCompress))
 
-exports.watch = function() {
-    gulp.watch('./src/styles/*.scss', {ignoreInitial: false}, gulp.parallel(compilaSass))
+exports.watch = function () {
+    gulp.watch('./src/styles/*.scss', { ignoreInitial: false }, gulp.parallel(compilaSass))
 }

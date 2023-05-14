@@ -1,8 +1,18 @@
 @use 'variables';
 
+@mixin elementSize($height: 100%, $width: 100%) {
+    height: $height;
+    width: $width;
+}
+
+@mixin displayFlex($justify: center, $display: flex, $align: center ) {
+    display: $display;
+    align-items: $align;
+    justify-content: $justify;
+}
+
 .header {
-    width: 100vw;
-    height: 72px;
+    @include elementSize(72px);
     position: sticky;
     top: 0;
     left: 0;
@@ -11,16 +21,13 @@
     z-index: 5;
 
     @media (max-width: 767px) {
-        height: 52px;
+        @include elementSize(52px);
     }
 
     &__container {
-        height: 100%;
-        width: 100%;
+        @include elementSize();
+        @include displayFlex(space-between);
         padding: 0 36px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
 
         @media (max-width: 767px) {
             padding: 0 20px;
@@ -42,19 +49,17 @@
     }
 
     .nav {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        width: 100%;
-        height: 100%;
+        @include displayFlex(flex-end);
+        @include elementSize();
 
         &__list{
             height: 100%;
             display: flex;
 
             &__item{
-                display: flex;
-                align-items: center;
+                @include displayFlex();
+                // display: flex;
+                // align-items: center;
 
                 &:first-child {
                     margin-right: 16px;

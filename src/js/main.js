@@ -13,9 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const vingadoresLogo = document.querySelector('[data-hero-movie]');
     const headerLogo = document.querySelector('[data-header-title]');
     const bgImg = document.querySelector('[data-bg-img]');
+    const synopsis = document.querySelector('[data-about-synopsis]');
 
-    // Get logo position 
+    // Get position elements
     const logoVingadoresY = vingadoresLogo.getBoundingClientRect().top;
+    const synopsisBotton = synopsis.getBoundingClientRect().bottom
 
     // Listening scroll event
     window.addEventListener('scroll', () => {
@@ -24,11 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const windowWidth = window.innerWidth;
         const userPosition = window.scrollY;
 
+
         // Get header tag
         const header = document.querySelector('[data-header]');
 
         // Calculating to sign button Y value
         const btHeroToSignY = btHeroToSign.offsetTop + header.clientHeight;
+
+        
 
         // Handle with opacity
         changeOpacity(bgImg, userPosition);
@@ -40,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showHeader(header, windowWidth);
         }
 
-        if (userPosition < btHeroToSignY) {
+        if (userPosition < btHeroToSignY || userPosition > synopsisBotton) {
             hiddenElementsHeader(btHeaderSign, headerLogo);
         } else {
             showElementsHeader(btHeaderSign, headerLogo);
