@@ -27,22 +27,19 @@
 .main {
     background-color: variables.$bgMain;
     padding-bottom: 150px;
-    
-    @media (max-width: 767px){
+
+    @media (max-width: 767px) {
         padding-bottom: 125px;
     }
 }
 
-.title {
+.title--is-big {
     @include textConfig(24px, 700);
 
-    &--section-about {
-        color: variables.$colorSecondary;
-        padding-bottom: 15px;
-        border-bottom: 1.6px solid variables.$colorSecondary;
-        margin-bottom: 10px;
-        text-transform: uppercase;
-    }
+}
+
+.title {
+    @include textConfig(20px, 700);
 }
 
 .title__small {
@@ -69,14 +66,11 @@
 .logo {
     height: 48px;
 
-    @media (max-width: 767px){
+    @media (max-width: 767px) {
         height: 38px;
     }
-    &--is-hidden {
-        visibility: hidden;
-    }
 
-    &--mobile {
+    &--is-visible {
         @media (max-width:767px) {
             visibility: visible;
             height: 38px;
@@ -86,38 +80,33 @@
 
 .button {
     background: variables.$btPrimary;
-    padding: 0 16px;
-    height: 40px;
+    padding: 10px 16px;
     @include textConfig(15px);
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     border: none;
     border-radius: .25rem;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease-in-out 0s;
 
     @media (max-width: 767px) {
-        padding: 0 8px;
+        padding: 10px 8px;
     }
 
-    &:first-child {
-        margin-right: 16px;
-
-        @media (max-width: 767px) {
-            margin-right: 0;
-        }
-    }
 
     &:hover {
         background-color: variables.$btPrimaryHover;
     }
 
-    &--is-hidden {
-        visibility: hidden;
+    &--is-mobile {
+        @media (max-width: 767px) {
+            margin: 0 auto;
+            padding: 14px 24px;
+        }
     }
 
-    &--secondary {
+    &--is-secondary {
         background: variables.$btSecondary;
         border: 1px solid variables.$colorPrimary;
 
@@ -128,11 +117,10 @@
     }
 
     &--hero {
-        height: 56px;
-        padding: 0 24px;
+        padding: 18px 24px;
 
         @media (max-width: 767px) {
-            height: 40px;
+            padding: 10px 24px;
         }
     }
 

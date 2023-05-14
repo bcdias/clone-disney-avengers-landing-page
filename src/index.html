@@ -13,14 +13,24 @@
 </head>
 
 <body>
-    <header class="header">
+    <header data-header class="header header--is-transparent">
         <div class="header__container">
-            <h1>
-                <img src="../dist/img/logo.svg" alt="Logo da Disney+" class="logo logo--is-hidden logo--mobile">
+            <h1 data-header-title class="header__title header__title--is-hidden">
+                <img src="../dist/img/logo.svg" alt="Logo da Disney+" class="logo logo--is-visible">
             </h1>
-            <nav class="header__nav">
-                <button type="button" class="button button--is-hidden">Assinar o Disney+</button>
-                <button type="button" class="button button--secondary">Entrar</button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li data-header-toSign class="nav__list__item nav__list__item--is-hidden nav__list__item--is-mobile">
+                        <a href="#" class="button button--is-mobile">
+                            Assinar o Disney+
+                        </a>
+                    </li>
+                    <li class="nav__list__item">
+                        <a href="#" class="button button--is-secondary">
+                            Entrar
+                        </a>
+                    </li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -29,8 +39,8 @@
             <img src="../dist/img/vingadores.jpeg" alt="Imagem de divulgação do filme vingadores" class="background__img">
             <div class="background__gradient"></div>
         </div>
-        <section class="hero">
-            <div class="hero__movie">
+        <section data-hero class="hero">
+            <div data-hero-movie class="hero__movie">
                 <img src="../dist/img/avenger_logo.png" alt="Logo do filme Vingadores" class="hero__movie__logo">
             </div>
             <div class="hero__information">
@@ -43,8 +53,18 @@
                 <p class="text--small">Ficção científica, Fantasia, Super-Heróis, Ação e aventura</p>
             </div>
             <nav class="hero__nav">
-                <button type="button" class="button button--hero">Assinar o Disney+</button>
-                <button type="button" class="button button--secondary button--hero button--hero-hidden">Trailer</button>
+                <ul class="hero__nav__list">
+                    <li class="hero__nav__list__item">
+                        <a data-hero-sign class="button button--hero">
+                            Assinar o Disney+
+                        </a>
+                    </li>
+                    <li class="hero__nav__list__item">
+                        <a class="button button--is-secondary button--hero button--hero-hidden">
+                            Trailer
+                        </a>
+                    </li>
+                </ul>
             </nav>
             <p class=" text--big hero__synopsis">
                 Quando um inimigo inesperado ameaça a segurança global, Nick Fury, diretor da agência internacional
@@ -53,9 +73,9 @@
             </p>
         </section>
         <section class="about">
-            <h2 class="title title--section-about">Detalhes</h2>
+            <h2 class="title about__title">Detalhes</h2>
             <article class="movie">
-                <h2 class="title movie__title">The Avengers: Os Vingadores da Marvel Studios</h2>
+                <h2 class="title--is-big">The Avengers: Os Vingadores da Marvel Studios</h2>
                 <div class="movie__info">
                     <div class="content">
                         <p class="text--big content__synopsis">
@@ -120,7 +140,7 @@
                     </div>
                 </div>
             </article>
-        </section>    
+        </section>
     </main>
     <footer class="footer">
         <div class="footer__container">
@@ -143,9 +163,10 @@
                 comercializado por The Walt Disney Company (Brasil) Ltda., World Trade Center, Av. Das Nações Unidas,
                 12.551, 12.555, 12.559, Piso 10, São Paulo/SP - CEP 04578-903, Brasil e CNPJ/M 73.042.962/0004-20
             </p>
-            <p class="text--small footer__content footer__content--copy">&copy; Disney. Todos os direitos reservados</p> 
+            <p class="text--small footer__content footer__content--copy">&copy; Disney. Todos os direitos reservados</p>
         </div>
     </footer>
+    <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>

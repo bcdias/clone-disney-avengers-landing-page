@@ -1,18 +1,25 @@
+@use 'variables';
+
 .about {
     margin: 0 calc(3.5vw + 24px);
     z-index: 1;
     position: relative;
+
+    &__title{
+        color: variables.$colorSecondary;
+        padding-bottom: 15px;
+        border-bottom: 2px solid variables.$lineColor;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
 }
 
 .movie {
     margin-top: 10px;
 
-    &__title {
-        margin-bottom: 24px;
-
-    }
 
     &__info {
+        margin-top: 24px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 24px;
