@@ -23,9 +23,11 @@
     text-decoration: none;
     box-sizing: border-box;
 }
+.body{
+    background-color: variables.$bgMain;
+}
 
 .main {
-    background-color: variables.$bgMain;
     padding-bottom: 150px;
 
     @media (max-width: 767px) {
@@ -49,10 +51,6 @@
 
 .text--big {
     @include textConfig;
-
-    @media (max-width: 767px) {
-        // @include textConfig(15px);
-    }
 }
 
 .text {
