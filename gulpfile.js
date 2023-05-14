@@ -34,7 +34,11 @@ function jsCompress() {
 function replaceTemplate() {
     return gulp.src(['./src/index.html'])
         .pipe(replace('<link rel="stylesheet" href="../dist/styles/main.css">', '<link rel="stylesheet" href="./styles/main.css">'))
-        .pipe(replace('baz', 'fuz'))
+        .pipe(replace('src="../dist/img/logo.svg"', 'src="./img/logo.svg"'))
+        .pipe(replace('src="../dist/img/vingadores.jpeg"', 'src="./img/vingadores.jpeg"'))
+        .pipe(replace('src="../dist/img/age.png"', 'src="./img/age.png"'))
+        .pipe(replace('src="../dist/img/ad.png"', 'src="./img/ad.png"'))
+        .pipe(replace('src="../dist/img/cc.png"', 'src="./img/cc.png"'))
         .pipe(gulp.dest('./prebuild'));
 }
 
